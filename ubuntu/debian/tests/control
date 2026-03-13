@@ -1,2 +1,2 @@
 Tests: build
-Depends: libgz-msgs-dev, pkg-config, build-essential
+Depends: libgz-msgs-dev, pkg-config, build-essential, libgz-math-eigen3-dev
