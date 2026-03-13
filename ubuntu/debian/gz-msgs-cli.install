@@ -1,0 +1,4 @@
+usr/libexec/gz/msgs[0-9][0-9]/*
+usr/lib/ruby/*/cmdmsgs[0-9][0-9].rb
+usr/share/*/msgs[0-9][0-9].yaml
+usr/share/gz/*.completion*/*
