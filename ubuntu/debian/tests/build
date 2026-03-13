@@ -1,0 +1,30 @@
+#!/bin/sh
+# autopkgtest check: Build and run a program against gz-msgs, to verify that the
+# headers and pkg-config file are installed correctly
+# (C) 2012 Jose Luis Rivero
+# Author: Jose Luis Rivero <jrivero@osrfoundation.org>
+
+set -e
+
+WORKDIR=$(mktemp -d)
+trap "rm -rf $WORKDIR" 0 INT QUIT ABRT PIPE TERM
+cd $WORKDIR
+cat <<EOF > gztest.c
+
+#include <iostream>
+#include <gz/msgs.hh>
+
+int main(int argc, char **argv)
+{
+    gz::msgs::Int32 foo;
+    gz::msgs::StringMsg fee;
+
+    return 0;
+}
+EOF
+
+g++ -o gztest gztest.c `pkg-config --cflags --libs gz-msgs`
+echo "build: OK"
+[ -x gztest ]
+./gztest
+echo "run: OK"

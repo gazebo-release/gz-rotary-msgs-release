@@ -1,0 +1,133 @@
+Source: gz-msgs
+Maintainer: Jose Luis Rivero <jrivero@honurobotics.com>
+Section: science
+Priority: optional
+Build-Depends: cmake,
+               pkg-config,
+               debhelper (>= 13),
+               dh-python,
+               doxygen,
+               libprotoc-dev,
+               libprotobuf-dev (>= 2.3.0),
+               libtinyxml2-dev,
+               libgz-cmake-dev,
+               libgz-math-dev,
+               libgz-tools-dev,
+               libgz-utils-cli-dev,
+               protobuf-compiler,
+               python3,
+               python3-dev,
+               python3-protobuf
+Vcs-Browser: https://github.com/gazebosim/gz-msgs
+Vcs-Git: https://github.com/gazebo-release/gz-rotary-msgs-release
+Standards-Version: 4.5.1
+Homepage: http://gazebosim.org/
+
+Package: libgz-msgs
+Architecture: any
+Section: libs
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Recommends: gz-msgs-cli
+Provides: libgz-msgs-generic
+Conflicts: libgz-msgs-generic, libgz-msgs8, libgz-msgs10, libgz-msgs11, libgz-msgs12
+Replaces: libgz-msgs8, libgz-msgs10, libgz-msgs11, libgz-msgs12
+Multi-Arch: same
+Description: Set of message definitions used by robotics apps - Shared library
+ Gazebo msgs is a component in the Gazebo framework, a set of
+ librariesdesigned to rapidly develop robot applications. The library
+ defines common protobuf messages used by the robotics community.
+ .
+ This package contains the main message library.
+
+Package: libgz-msgs-dev
+Architecture: any
+Section: libdevel
+Depends: libprotobuf-dev (>= 2.3.0),
+         libprotoc-dev,
+         protobuf-compiler,
+         libtinyxml2-dev,
+         libgz-cmake-dev,
+         libgz-math-dev,
+         libgz-utils-cli-dev,
+         python3,
+         ${shlibs:Depends},
+         libgz-msgs (= ${binary:Version}),
+         ${misc:Depends}
+Provides: libgz-msgs-dev-generic
+Conflicts: libgz-msgs-dev-generic, libgz-msgs8-dev, libgz-msgs10-dev, libgz-msgs11-dev, libgz-msgs12-dev
+Replaces: libgz-msgs8-dev, libgz-msgs10-dev, libgz-msgs11-dev, libgz-msgs12-dev
+Multi-Arch: no
+Description: Set of message definitions used by robotics apps - Dev files
+ Gazebo msgs is a component in the Gazebo framework, a set of
+ librariesdesigned to rapidly develop robot applications. The library
+ defines common protobuf messages used by the robotics community.
+ .
+ This package contains the headers and other tools for development.
+
+Package: gz-msgs-cli
+Architecture: any
+Depends: libgz-msgs (= ${binary:Version}),
+         ${shlibs:Depends},
+         ${misc:Depends}
+Provides: gz-msgs-cli-generic
+Conflicts: gz-msgs-cli-generic, gz-msgs8-cli, gz-msgs10-cli, gz-msgs11-cli, gz-msgs12-cli
+Replaces: gz-msgs8-cli, gz-msgs10-cli, gz-msgs11-cli, gz-msgs12-cli
+Multi-Arch: no
+Description: Set of message definitions used by robotics apps - CLI
+ Gazebo msgs is a component in the Gazebo framework, a set of
+ librariesdesigned to rapidly develop robot applications. The library
+ defines common protobuf messages used by the robotics community.
+ .
+ This package contains the cli utilities.
+
+Package: python3-gz-msgs
+Architecture: any
+Depends: libgz-msgs (= ${binary:Version}),
+         python3-protobuf,
+         ${misc:Depends},
+         ${python3:Depends}
+Provides: python3-gz-msgs-generic
+Conflicts: python3-gz-msgs-generic, python3-gz-msgs8, python3-gz-msgs10, python3-gz-msgs11, python3-gz-msgs12
+Replaces: python3-gz-msgs8, python3-gz-msgs10, python3-gz-msgs11, python3-gz-msgs12
+Enhances: libgz-msgs
+Description: Set of message definitions used by robotics apps - Dev files
+ Gazebo msgs is a component in the Gazebo framework, a set of
+ librariesdesigned to rapidly develop robot applications. The library
+ defines common protobuf messages used by the robotics community.
+ .
+ This package contains the headers and other tools for development.
+ .
+ The package contains the Python3 bindings.
+
+Package: gz-rotary-msgs
+Depends: libgz-msgs (= ${binary:Version}), ${misc:Depends}
+Architecture: all
+Priority: optional
+Section: metapackages
+Description: alias package
+ Provides a package for Rotary without exposing the version number.
+
+Package: gz-rotary-msgs-dev
+Depends: libgz-msgs-dev (= ${binary:Version}), ${misc:Depends}
+Architecture: all
+Priority: optional
+Section: metapackages
+Description: alias package
+ Provides a package for Rotary without exposing the version number.
+
+Package: gz-rotary-msgs-cli
+Depends: gz-msgs-cli (= ${binary:Version}), ${misc:Depends}
+Architecture: all
+Priority: optional
+Section: metapackages
+Description: alias package
+ Provides a package for Rotary without exposing the version number.
+
+Package: gz-rotary-msgs-python
+Depends: python3-gz-msgs (= ${binary:Version}), ${misc:Depends}
+Architecture: all
+Priority: optional
+Section: metapackages
+Description: alias package
+ Provides a package for Rotary without exposing the version number.

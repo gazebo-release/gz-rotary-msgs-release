@@ -1,0 +1,2 @@
+Tests: build
+Depends: libgz-msgs-dev, pkg-config, build-essential
