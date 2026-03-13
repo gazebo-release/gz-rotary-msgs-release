@@ -3,5 +3,5 @@ usr/include/*
 usr/lib/*/*.so
 usr/lib/*/pkgconfig/*.pc
 usr/lib/*/cmake/*-msgs*/*
-usr/share/gz/*-msgs*/*-msgs[0-9]*.tag.xml
+usr/share/gz/*-msgs*/*-msgs.tag.xml
 usr/share/gz/gz-msgs*/protos/*
