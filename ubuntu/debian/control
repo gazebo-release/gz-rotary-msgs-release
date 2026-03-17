@@ -100,15 +100,7 @@ Description: Set of message definitions used by robotics apps - Dev files
  .
  The package contains the Python3 bindings.
 
-Package: gz-rotary-msgs
-Depends: libgz-msgs (= ${binary:Version}), ${misc:Depends}
-Architecture: all
-Priority: optional
-Section: metapackages
-Description: alias package
- Provides a package for Rotary without exposing the version number.
-
-Package: gz-rotary-msgs-dev
+Package: libgz-rotary-msgs-dev
 Depends: libgz-msgs-dev (= ${binary:Version}), ${misc:Depends}
 Architecture: all
 Priority: optional
@@ -124,7 +116,7 @@ Section: metapackages
 Description: alias package
  Provides a package for Rotary without exposing the version number.
 
-Package: gz-rotary-msgs-python
+Package: python3-gz-rotary-msgs
 Depends: python3-gz-msgs (= ${binary:Version}), ${misc:Depends}
 Architecture: all
 Priority: optional
